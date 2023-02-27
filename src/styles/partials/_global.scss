@@ -1,0 +1,29 @@
+@use "./mixins" as *;
+@use "./variables" as *;
+@use "./typography";
+
+.wrapper {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+
+  @include tablet {
+    padding-left: 3.6rem;
+    padding-right: 3.6rem;
+  }
+
+  @include desktop {
+    max-width: $wrapper-max-width;
+    margin: auto;
+    width: 100%;
+    padding-left: 4.8rem;
+    padding-right: 4.8rem;
+  }
+
+  .hero & {
+    height: 100%;
+  }
+}
+
+a {
+  text-decoration: none;
+}
