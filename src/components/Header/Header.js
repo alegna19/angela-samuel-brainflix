@@ -9,22 +9,28 @@ const Header = () => {
   return (
     <div className="heather">
       <div className="wrapper">
-        <img src={imageLogo} alt="logo" className="heather__logo" />
-        <div className="heather__search">
-          <input
-            type="text"
-            name="search"
-            className="heather__text"
-            placeholder="Search"
-          />
-          <img
-            src={searchIcon}
-            alt="search icon"
-            className="heather__search-icon"
-          />
-          <img src={heatherImg} alt="heather" className="heather__image" />
-          <button className="heather__btn">UPLOAD</button>
-          <img src={uploadIcon} alt="upload icon" className="heather__upload" />
+        <div className="heather__container">
+          <img src={imageLogo} alt="logo" className="heather__logo" />
+          <div className="heather__search">
+            <input
+              type="text"
+              name="search"
+              className="heather__text"
+              placeholder="Search"
+            />
+            <img
+              src={searchIcon}
+              alt="search icon"
+              className="heather__search-icon"
+            />
+            <img src={heatherImg} alt="heather" className="heather__image" />
+            <button className="heather__btn">UPLOAD</button>
+            <img
+              src={uploadIcon}
+              alt="upload icon"
+              className="heather__upload"
+            />
+          </div>
         </div>
       </div>
     </div>
