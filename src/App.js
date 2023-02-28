@@ -1,13 +1,12 @@
+import Header from "./components/Header/Header";
 import "./styles/main.scss";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>Edit and save to reload.</p>
-      </header>
+      <Header />
     </div>
   );
-}
+};
 
 export default App;
