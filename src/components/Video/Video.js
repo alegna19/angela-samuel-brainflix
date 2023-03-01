@@ -1,5 +1,6 @@
 import "./Video.scss";
 import DescriptionVideo from "../DescriptionVideo/DescriptionVideo";
+import FormComment from "../FormComment/FormComment";
 
 const Video = (props) => {
   return (
@@ -12,12 +13,13 @@ const Video = (props) => {
                 <video
                   key={data.id}
                   className="video"
-                  src={data.image}
+                  poster={data.image}
                   controls
                   width="100%"
                   height="100%"
                 ></video>
                 <DescriptionVideo description={data} />
+                <FormComment formComment={data} />
               </>
             );
           }

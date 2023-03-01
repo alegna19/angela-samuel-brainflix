@@ -1,0 +1,158 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography";
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/resets" as *;
+
+.form {
+  @include flex(center, column, null);
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 600;
+
+    @include tablet {
+      font-size: 3.5rem;
+    }
+
+    @include desktop {
+      padding-left: 1rem;
+    }
+  }
+
+  &__error-comment {
+    @include flex(flex-start, row, null);
+    height: 0;
+    padding-left: 5rem;
+    padding-bottom: 1.5rem;
+
+    @include tablet {
+      padding-left: 13rem;
+    }
+
+    @include desktop {
+      padding-left: 39rem;
+    }
+  }
+
+  &__error {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: tomato;
+    height: 1rem;
+    margin: 0;
+
+    @include tablet {
+      font-weight: 700;
+      width: 44rem;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+
+    @include tablet {
+      justify-content: center;
+    }
+  }
+
+  &__input {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-right: 0rem;
+    padding-left: 1.5rem;
+  }
+
+  &__label {
+    color: $brand-color-silver;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__name {
+    background-color: $brand-secundary-alabaster;
+    width: 23.8rem;
+    height: 4rem;
+    border-radius: 4px;
+    border: 1px solid $bran-color-mercury;
+    padding: 0.8rem;
+    margin: 1rem 0;
+    font-family: Avenir;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include tablet {
+      width: 50rem;
+      height: 4rem;
+    }
+
+    @include desktop {
+      width: 47rem;
+      height: 4rem;
+    }
+  }
+
+  &__image {
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+    padding: 0;
+    margin: 2.5rem 0;
+
+    @include tablet {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: end;
+
+    @include tablet {
+      justify-content: flex-end;
+      width: 90.5%;
+    }
+
+    @include desktop {
+      justify-content: center;
+      width: 72.5%;
+    }
+  }
+
+  &__comment {
+    @extend .form__name;
+    height: 10rem;
+    resize: none;
+    font-family: Avenir;
+    padding-left: 0.9rem;
+  }
+}
+
+.form__button {
+  background-color: $brand-primary-blue;
+  color: white;
+  font-size: 1.5rem;
+  width: 82%;
+  height: 4rem;
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-style: none;
+  border-radius: 4px;
+  text-align: center;
+  padding: 1rem 7.6rem;
+  cursor: pointer;
+
+  @include tablet {
+    align-items: flex-end;
+    width: 24%;
+    justify-content: center;
+  }
+}
