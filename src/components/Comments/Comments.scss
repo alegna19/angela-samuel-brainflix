@@ -1,0 +1,92 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography";
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/resets" as *;
+
+.comment {
+  background-color: $brand-secundary-alabaster;
+  border-radius: 4px;
+  border: 1px solid $bran-color-mercury;
+  width: 23.8rem;
+  margin: 1rem 0;
+  height: 10rem;
+  resize: none;
+  font-family: Avenir;
+  padding-left: 0.9rem;
+}
+
+.comments {
+  @include flex(center, column, center);
+  padding: 0 0 2.5rem;
+
+  &__info {
+    @include flex(flex-start, row, null);
+    flex-wrap: wrap;
+    border-top: 1px solid $bran-color-mercury;
+    padding: 1.6rem 0;
+    width: 100%;
+
+    &:last-child {
+      border-bottom: 1px solid $bran-color-mercury;
+    }
+
+    @include desktop {
+      @include flex(flex-start, row, null);
+      margin: 0 33rem;
+    }
+  }
+
+  &__name {
+    text-align: left;
+    padding-right: 5rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-left: 1rem;
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
+  }
+
+  &__content {
+    padding-left: 5.4rem;
+    font-size: 1.3rem;
+    margin: 0;
+    line-height: 2rem;
+    width: 100%;
+
+    @include tablet {
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+    }
+  }
+
+  &__date {
+    color: $brand-color-silver;
+    font-size: 1.3rem;
+    margin-left: auto;
+  }
+
+  &__image {
+    width: 4.5rem;
+  }
+
+  &__delete-btn {
+    @include flex(flex-start, row, null);
+    background-color: $brand-primary-black;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+
+    @include tablet {
+      @include flex(center, row, null);
+      width: 10%;
+    }
+
+    @include tablet {
+      width: 6%;
+    }
+  }
+}

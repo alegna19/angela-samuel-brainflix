@@ -19,7 +19,7 @@ const Video = (props) => {
                   height="100%"
                 ></video>
                 <DescriptionVideo description={data} />
-                <FormComment formComment={data} />
+                <FormComment formData={data} />
               </>
             );
           }
