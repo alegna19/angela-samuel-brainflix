@@ -2,7 +2,9 @@ import Comments from "../Comments/Comments";
 import formImg from "../../assets/images/Mohan-muruge.jpg";
 import("./FormComment.scss");
 
-const FormComment = (props) => {
+const FormComment = ({ formData, activeVideoId }) => {
+  const activeVideo = formData.find((data) => data.id === activeVideoId);
+
   return (
     <>
       <section>
@@ -13,15 +15,6 @@ const FormComment = (props) => {
               <div className="form__comment-error"></div>
               <img className="form__image" src={formImg} alt="representative" />
               <div className="form__input">
-                <label className="form__label" name="name">
-                  NAME
-                </label>
-                <input
-                  className="form__name"
-                  type="text"
-                  name="name"
-                  placeholder="Enter your name"
-                />
                 <label className="form__label" name="comment">
                   COMMENT
                 </label>
@@ -45,7 +38,7 @@ const FormComment = (props) => {
           </form>
         </div>
       </section>
-      <Comments commentsData={props.formData} />
+      <Comments comments={activeVideo} />
     </>
   );
 };

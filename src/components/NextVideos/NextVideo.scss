@@ -1,0 +1,23 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography";
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/resets" as *;
+
+.next {
+  display: flex;
+  justify-content: space-between;
+
+  &__link {
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__video {
+    width: 40%;
+    height: 30%;
+    padding-left: 1rem;
+    margin: 1rem;
+  }
+}

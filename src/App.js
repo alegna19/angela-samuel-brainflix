@@ -1,16 +1,29 @@
 import { useState } from "react";
+import DescriptionVideo from "./components/DescriptionVideo/DescriptionVideo";
+import FormComment from "./components/FormComment/FormComment";
 import Header from "./components/Header/Header";
-import Video from "./components/Video/Video";
+import Hero from "./components/Hero/Hero";
+import NextVideos from "./components/NextVideos/NextVideos";
 import videoDataDetails from "./data/video-details.json";
 import "./styles/main.scss";
 
 const App = () => {
-  let [dataDetails, setDataDetails] = useState(videoDataDetails);
+  const [dataDetails, setDataDetails] = useState(videoDataDetails);
+  // State: activeVideo (object, id)
+  const [activeVideoId, setActiveVideoId] = useState(videoDataDetails[0].id);
+
+  // A function, that when clicked, it should update the ACTIVE VIDEO
+  const handleClick = (id) => {
+    setActiveVideoId(id);
+  };
 
   return (
     <div className="App">
       <Header />
-      <Video dataVideo={dataDetails} />
+      <Hero hero={dataDetails} activeVideoId={activeVideoId} />
+      <DescriptionVideo videos={dataDetails} activeVideoId={activeVideoId} />
+      <FormComment formData={dataDetails} activeVideoId={activeVideoId} />
+      <NextVideos dataVideos={dataDetails} handleClick={handleClick} />
     </div>
   );
 };
