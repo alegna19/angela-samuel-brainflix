@@ -9,8 +9,8 @@ import "./styles/main.scss";
 
 const App = () => {
   const [dataDetails, setDataDetails] = useState(videoDataDetails);
-  // State: activeVideo (object, id)
   const [activeVideoId, setActiveVideoId] = useState(videoDataDetails[0].id);
+  console.log(activeVideoId);
 
   // A function, that when clicked, it should update the ACTIVE VIDEO
   const handleClick = (id) => {

@@ -3,3 +3,48 @@
 @use "../../styles/partials/typography";
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/resets" as *;
+
+.description {
+  &__title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 3.2rem;
+  }
+
+  &__metrics {
+    @include flex(flex-start, row, center);
+    color: $brand-color-silver;
+    border-top: 1.8px solid $bran-color-mercury;
+    border-bottom: 1.8px solid $bran-color-mercury;
+    padding-top: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  &__subTitle {
+    color: black;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  &__social {
+    @include flex(flex-start, null, null);
+  }
+
+  &__views {
+    padding: 0 0.5rem;
+    margin: 0;
+  }
+
+  &__likes {
+    padding: 0 0.6rem;
+  }
+
+  &__media {
+    padding-left: 8rem;
+  }
+
+  &__info {
+    line-height: 2rem;
+    font-size: 1.3rem;
+  }
+}
