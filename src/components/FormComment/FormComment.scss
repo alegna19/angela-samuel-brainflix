@@ -7,50 +7,17 @@
 .form {
   @include flex(center, column, null);
 
-  &__title {
-    font-size: 2.5rem;
-    font-weight: 600;
-
-    @include tablet {
-      font-size: 3.5rem;
-    }
-
-    @include desktop {
-      padding-left: 1rem;
-    }
-  }
-
-  &__error-comment {
-    @include flex(flex-start, row, null);
-    height: 0;
-    padding-left: 5rem;
-    padding-bottom: 1.5rem;
-
-    @include tablet {
-      padding-left: 13rem;
-    }
-
-    @include desktop {
-      padding-left: 39rem;
-    }
-  }
-
-  &__error {
+  &__count {
     font-size: 1.3rem;
-    font-weight: 600;
-    color: tomato;
-    height: 1rem;
-    margin: 0;
-
-    @include tablet {
-      font-weight: 700;
-      width: 44rem;
-      font-size: 1.5rem;
-    }
+    font-weight: 700;
+    margin-top: 1rem;
+    margin-bottom: 0;
   }
 
   &__info {
     display: flex;
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
 
     @include tablet {
       justify-content: center;
@@ -67,21 +34,23 @@
 
   &__label {
     color: $brand-color-silver;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 600;
     padding: 0;
     margin: 0;
   }
 
-  &__name {
+  &__comment {
     background-color: $brand-secundary-alabaster;
     width: 23.8rem;
-    height: 4rem;
     border-radius: 4px;
     border: 1px solid $bran-color-mercury;
     padding: 0.8rem;
     margin: 1rem 0;
     font-family: Avenir;
+    height: 10rem;
+    resize: none;
+    padding-left: 0.9rem;
 
     &:focus {
       outline: none;
@@ -126,33 +95,31 @@
     }
   }
 
-  &__comment {
-    @extend .form__name;
-    height: 10rem;
-    resize: none;
-    font-family: Avenir;
-    padding-left: 0.9rem;
+  .form__button {
+    background-color: $brand-primary-blue;
+    color: white;
+    font-size: 1.5rem;
+    width: 23.8rem;
+    height: 4rem;
+    display: flex;
+    margin-bottom: 2rem;
+    border-style: none;
+    border-radius: 4px;
+    text-align: center;
+    padding: 1rem 7.6rem;
+    cursor: pointer;
+    position: relative;
+
+    @include tablet {
+      align-items: flex-end;
+      width: 24%;
+      justify-content: center;
+    }
   }
-}
 
-.form__button {
-  background-color: $brand-primary-blue;
-  color: white;
-  font-size: 1.5rem;
-  width: 82%;
-  height: 4rem;
-  display: flex;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  border-style: none;
-  border-radius: 4px;
-  text-align: center;
-  padding: 1rem 7.6rem;
-  cursor: pointer;
-
-  @include tablet {
-    align-items: flex-end;
-    width: 24%;
-    justify-content: center;
+  &__add-comment {
+    position: absolute;
+    width: 2rem;
+    left: 1rem;
   }
 }

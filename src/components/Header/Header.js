@@ -23,12 +23,14 @@ const Header = () => {
               className="heather__search-icon"
             />
             <img src={heatherImg} alt="heather" className="heather__image" />
-            <button className="heather__btn">UPLOAD</button>
-            <img
-              src={uploadIcon}
-              alt="upload icon"
-              className="heather__upload"
-            />
+            <button className="heather__btn">
+              UPLOAD
+              <img
+                src={uploadIcon}
+                alt="upload icon"
+                className="heather__upload"
+              />
+            </button>
           </div>
         </div>
       </div>
