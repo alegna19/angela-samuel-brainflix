@@ -11,9 +11,9 @@ const DescriptionVideo = ({ videos, activeVideoId }) => {
         <div>
           <h1 className="description__title">{activeVideo.title}</h1>
           <section className="description__metrics">
-            <div>
+            <div className="description__details">
               <p className="description__subTitle">{activeVideo.channel}</p>
-              <p className="description__info">
+              <p className="description__date">
                 {new Date(activeVideo.timestamp).toLocaleDateString()}
               </p>
             </div>
