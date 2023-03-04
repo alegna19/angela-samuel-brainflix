@@ -1,11 +1,15 @@
 import Video from "../Video/Video";
 import "./NextVideo.scss";
 
-const NextVideos = ({ dataVideos, handleClick }) => {
+const NextVideos = ({ dataVideos, handleClick, activeVideoId }) => {
   return (
     <div>
       {dataVideos.map((video) => {
-        return <Video key={video.id} video={video} handleClick={handleClick} />;
+        return video.id !== activeVideoId ? (
+          <Video key={video.id} video={video} handleClick={handleClick} />
+        ) : (
+          ""
+        );
       })}
     </div>
   );

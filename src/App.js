@@ -23,7 +23,11 @@ const App = () => {
       <Hero hero={dataDetails} activeVideoId={activeVideoId} />
       <DescriptionVideo videos={dataDetails} activeVideoId={activeVideoId} />
       <FormComment formData={dataDetails} activeVideoId={activeVideoId} />
-      <NextVideos dataVideos={dataDetails} handleClick={handleClick} />
+      <NextVideos
+        dataVideos={dataDetails}
+        handleClick={handleClick}
+        activeVideoId={activeVideoId}
+      />
     </div>
   );
 };
