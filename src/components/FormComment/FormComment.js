@@ -10,10 +10,9 @@ const FormComment = ({ formData, activeVideoId }) => {
     <>
       <section>
         <div className="wrapper">
+          <p className="form__count">3 Comments</p>
           <form className="form">
-            <p className="form__count">3 Comments</p>
             <div className="form__info">
-              <div className="form__comment-error"></div>
               <img className="form__image" src={formImg} alt="representative" />
               <div className="form__input">
                 <label className="form__label" name="comment">

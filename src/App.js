@@ -21,13 +21,20 @@ const App = () => {
     <div className="App">
       <Header />
       <Hero hero={dataDetails} activeVideoId={activeVideoId} />
-      <DescriptionVideo videos={dataDetails} activeVideoId={activeVideoId} />
-      <FormComment formData={dataDetails} activeVideoId={activeVideoId} />
-      <NextVideos
-        dataVideos={dataDetails}
-        handleClick={handleClick}
-        activeVideoId={activeVideoId}
-      />
+      <div className="row">
+        <div>
+          <DescriptionVideo
+            videos={dataDetails}
+            activeVideoId={activeVideoId}
+          />
+          <FormComment formData={dataDetails} activeVideoId={activeVideoId} />
+        </div>
+        <NextVideos
+          dataVideos={dataDetails}
+          handleClick={handleClick}
+          activeVideoId={activeVideoId}
+        />
+      </div>
     </div>
   );
 };

@@ -18,11 +18,16 @@
 
 .comments {
   @include flex(center, column, center);
-  padding: 0 0 2.5rem;
+  padding: 0 0 0.5rem;
+
+  &__container {
+    @include desktop {
+      padding-left: 10rem;
+    }
+  }
 
   &__info {
     @include flex(flex-start, row, null);
-    flex-wrap: wrap;
     border-top: 1px solid $bran-color-mercury;
     padding: 1.6rem 0;
     width: 100%;
@@ -31,26 +36,27 @@
       border-bottom: 1px solid $bran-color-mercury;
     }
 
-    @include desktop {
-      @include flex(flex-start, row, null);
-      margin: 0 33rem;
+    @include tablet {
+      padding-top: 1rem;
     }
   }
 
   &__name {
     text-align: left;
-    padding-right: 5rem;
     font-weight: 600;
     font-size: 1.4rem;
-    margin-left: 1rem;
 
     @include tablet {
       font-size: 1.5rem;
     }
   }
 
+  &__details {
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__content {
-    padding-left: 5.4rem;
     font-size: 1.3rem;
     margin: 0;
     line-height: 2rem;
@@ -60,20 +66,29 @@
       font-size: 1.5rem;
       line-height: 2.2rem;
     }
+
+    @include desktop {
+      padding-right: 2rem;
+    }
   }
 
   &__date {
     color: $brand-color-silver;
     font-size: 1.3rem;
     margin-left: auto;
+
+    @include desktop {
+      padding-right: 2rem;
+    }
   }
 
   &__image {
+    flex-shrink: 0;
     width: 3.6rem;
     height: 3.6rem;
     border-radius: 50%;
     padding: 0;
-    margin: 2.5rem 0;
+    margin: 1.4rem 2rem 2.5rem 0;
     background-color: $bran-color-mercury;
   }
 

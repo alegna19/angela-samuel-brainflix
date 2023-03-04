@@ -15,8 +15,8 @@
     max-width: $wrapper-max-width;
     margin: auto;
     width: 100%;
-    padding-left: 4.8rem;
-    padding-right: 4.8rem;
+    padding-left: 3rem;
+    padding-right: 0;
   }
 
   .hero & {
@@ -26,4 +26,10 @@
 
 a {
   text-decoration: none;
+}
+
+.row {
+  @include desktop {
+    display: flex;
+  }
 }

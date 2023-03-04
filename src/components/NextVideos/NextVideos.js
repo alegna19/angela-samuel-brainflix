@@ -3,7 +3,8 @@ import "./NextVideo.scss";
 
 const NextVideos = ({ dataVideos, handleClick, activeVideoId }) => {
   return (
-    <div>
+    <div className="next-videos">
+      <h3 className="next-videos__title">Next Videos</h3>
       {dataVideos.map((video) => {
         return video.id !== activeVideoId ? (
           <Video key={video.id} video={video} handleClick={handleClick} />
