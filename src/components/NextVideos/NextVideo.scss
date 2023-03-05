@@ -12,55 +12,25 @@
 
   &__title {
     color: $brand-color-silver;
-    font-size: 1.3rem;
-    font-weight: 600;
-    padding: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 1.5rem 0;
     margin: 0;
     padding-left: 1.6rem;
 
     @include tablet {
+      padding-left: 3.6rem;
       padding-right: 3.6rem;
+      margin-top: 1rem;
+      margin-bottom: 1.6rem;
     }
 
     @include desktop {
-      margin: 2rem;
       font-size: 1.6rem;
-      padding: 0;
+      padding-left: 3rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      margin-top: 1.3rem;
     }
-  }
-}
-
-.next {
-  @include flex(flex-start, row, flex-start);
-  padding: 1rem 0;
-
-  @include tablet {
-    width: 50%;
-  }
-
-  @include desktop {
-    width: 100%;
-  }
-
-  &__video {
-    flex-shrink: 0;
-    flex-grow: 0;
-    object-fit: cover;
-    width: 40%;
-    height: 7rem;
-    margin-right: 1rem;
-    border-radius: 0.5rem;
-  }
-
-  &__title {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
-    font-weight: 700;
-  }
-
-  &__subTitle {
-    margin-top: 0;
-    font-size: 1.3rem;
   }
 }

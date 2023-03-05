@@ -39,6 +39,14 @@
     @include tablet {
       padding-top: 1rem;
     }
+
+    @include desktop {
+      padding-top: 2rem;
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
   }
 
   &__name {
@@ -47,6 +55,10 @@
     font-size: 1.4rem;
 
     @include tablet {
+      font-size: 1.3rem;
+    }
+
+    @include desktop {
       font-size: 1.5rem;
     }
   }
@@ -63,12 +75,13 @@
     width: 100%;
 
     @include tablet {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       line-height: 2.2rem;
     }
 
     @include desktop {
       padding-right: 2rem;
+      font-size: 1.5rem;
     }
   }
 
@@ -79,6 +92,7 @@
 
     @include desktop {
       padding-right: 2rem;
+      font-size: 1.4rem;
     }
   }
 

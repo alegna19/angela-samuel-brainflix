@@ -1,0 +1,20 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/typography";
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/resets" as *;
+
+.video {
+  width: 100%;
+  height: auto;
+
+  @include tablet {
+    @include flex(null, row, nul);
+    background-color: $brand-secondary-dark-black;
+    height: 71vh;
+  }
+
+  @include desktop {
+    height: 90vh;
+  }
+}

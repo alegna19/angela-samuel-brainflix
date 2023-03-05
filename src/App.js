@@ -12,7 +12,10 @@ const App = () => {
   const [activeVideoId, setActiveVideoId] = useState(videoDataDetails[0].id);
   console.log(activeVideoId);
 
-  // A function, that when clicked, it should update the ACTIVE VIDEO
+  /**
+   * Validate active video through id.
+   * @param {Object} id
+   */
   const handleClick = (id) => {
     setActiveVideoId(id);
   };

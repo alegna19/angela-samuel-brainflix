@@ -47,7 +47,7 @@
     border: 1px solid $bran-color-mercury;
     padding: 0.8rem 4rem;
     margin: 1rem;
-    margin-right: 0.5rem;
+    margin-right: 1rem;
     margin-left: 0;
     font-family: Avenir;
     position: relative;
@@ -66,6 +66,7 @@
 
     @include desktop {
       margin-left: 46rem;
+      width: 26rem;
     }
   }
 
@@ -78,6 +79,9 @@
     @include tablet {
       width: 3rem;
       left: 27rem;
+    }
+    @include desktop {
+      left: 64rem;
     }
   }
 

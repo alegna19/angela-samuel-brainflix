@@ -1,3 +1,5 @@
+import "./Hero.scss";
+
 const Hero = ({ hero, activeVideoId }) => {
   const activeVideo = hero.find((video) => video.id === activeVideoId);
   return (

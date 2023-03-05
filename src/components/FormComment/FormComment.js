@@ -5,12 +5,13 @@ import "./FormComment.scss";
 
 const FormComment = ({ formData, activeVideoId }) => {
   const activeVideo = formData.find((data) => data.id === activeVideoId);
+  const countComments = activeVideo.comments.length;
 
   return (
     <>
       <section>
         <div className="wrapper">
-          <p className="form__count">3 Comments</p>
+          <p className="form__count">{countComments} Comments</p>
           <form className="form">
             <div className="form__info">
               <img className="form__image" src={formImg} alt="representative" />
