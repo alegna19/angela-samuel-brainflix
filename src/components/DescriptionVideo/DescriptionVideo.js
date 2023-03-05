@@ -14,7 +14,11 @@ const DescriptionVideo = ({ videos, activeVideoId }) => {
             <div className="description__details">
               <p className="description__subTitle">{activeVideo.channel}</p>
               <p className="description__date">
-                {new Date(activeVideo.timestamp).toLocaleDateString()}
+                {new Date(activeVideo.timestamp).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "2-digit",
+                  day: "2-digit",
+                })}
               </p>
             </div>
             <div className="description__media">

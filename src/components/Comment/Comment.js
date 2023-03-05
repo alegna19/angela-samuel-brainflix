@@ -7,7 +7,11 @@ const Comment = ({ comment }) => {
           <div className="comments__details">
             <p className="comments__name">{comment.name}</p>
             <p className="comments__date">
-              {new Date(comment.timestamp).toLocaleDateString()}
+              {new Date(comment.timestamp).toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+              })}
             </p>
           </div>
           <p className="comments__content">{comment.comment}</p>

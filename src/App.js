@@ -10,7 +10,6 @@ import "./styles/main.scss";
 const App = () => {
   const [dataDetails, setDataDetails] = useState(videoDataDetails);
   const [activeVideoId, setActiveVideoId] = useState(videoDataDetails[0].id);
-  console.log(activeVideoId);
 
   /**
    * Validate active video through id.
