@@ -3,9 +3,8 @@ import formImg from "../../assets/images/Mohan-muruge.jpg";
 import addComment from "../../assets/icons/add_comment.svg";
 import "./FormComment.scss";
 
-const FormComment = ({ formData, activeVideoId }) => {
-  const activeVideo = formData.find((data) => data.id === activeVideoId);
-  const countComments = activeVideo.comments.length;
+const FormComment = ({ mainVideo }) => {
+  const countComments = mainVideo.comments.length;
 
   return (
     <>
@@ -41,7 +40,7 @@ const FormComment = ({ formData, activeVideoId }) => {
           </form>
         </div>
       </section>
-      <Comments comments={activeVideo} />
+      <Comments comments={mainVideo.comments} />
     </>
   );
 };

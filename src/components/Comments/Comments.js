@@ -5,7 +5,7 @@ const Comments = ({ comments }) => {
   return (
     <div className="comments">
       <div className="wrapper">
-        {comments.comments.map((comment) => {
+        {comments.map((comment) => {
           return <Comment key={comment.id} comment={comment} />;
         })}
       </div>

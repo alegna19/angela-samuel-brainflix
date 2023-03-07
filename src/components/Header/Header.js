@@ -3,13 +3,16 @@ import imageLogo from "../../assets/logo/BrainFlix-logo.svg";
 import heatherImg from "../../assets/images/Mohan-muruge.jpg";
 import searchIcon from "../../assets/icons/search.svg";
 import uploadIcon from "../../assets/icons/upload.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className="heather">
       <div className="wrapper">
         <div className="heather__container">
-          <img src={imageLogo} alt="logo" className="heather__logo" />
+          <Link to={"/"} className="heather__logo">
+            <img src={imageLogo} alt="logo" />
+          </Link>
           <div className="heather__search">
             <input
               type="text"
@@ -23,14 +26,14 @@ const Header = () => {
               className="heather__search-icon"
             />
             <img src={heatherImg} alt="heather" className="heather__image" />
-            <button className="heather__btn">
+            <Link to={"/../upload"} className="heather__btn">
               UPLOAD
               <img
                 src={uploadIcon}
                 alt="upload icon"
                 className="heather__upload"
               />
-            </button>
+            </Link>
           </div>
         </div>
       </div>
