@@ -5,7 +5,6 @@ import DescriptionVideo from "../components/DescriptionVideo/DescriptionVideo";
 import FormComment from "../components/FormComment/FormComment";
 import Hero from "../components/Hero/Hero";
 import NextVideos from "../components/NextVideos/NextVideos";
-import videoDataDetails from "../data/video-details.json";
 import "../styles/main.scss";
 
 const Home = () => {
@@ -19,7 +18,6 @@ const Home = () => {
   //Get all videos from the API
   const getVideos = async () => {
     const { data } = await axios.get(apiUrl);
-    console.log(data[0]);
     setListVideos(data);
 
     const validateData = () => {
@@ -48,14 +46,6 @@ const Home = () => {
     return <h1>Loading ...</h1>;
   }
 
-  // /**
-  //  * Validate active video through id.
-  //  * @param {Object} id
-  //  */
-  // const handleClick = (id) => {
-  //   setActiveVideoId(id);
-  // };
-
   return (
     <div className="App">
       <Hero hero={mainVideo} activeVideoId={mainVideo.id} />
@@ -67,11 +57,7 @@ const Home = () => {
           />
           <FormComment mainVideo={mainVideo} />
         </div>
-        <NextVideos
-          dataVideos={listVideos}
-          // handleClick={handleClick}
-          activeVideoId={mainVideo.id}
-        />
+        <NextVideos dataVideos={listVideos} activeVideoId={mainVideo.id} />
       </div>
     </div>
   );
