@@ -11,7 +11,7 @@ const Header = () => {
       <div className="wrapper">
         <div className="heather__container">
           <Link to={"/"} className="heather__logo">
-            <img src={imageLogo} alt="logo" />
+            <img className="heather__img" src={imageLogo} alt="logo" />
           </Link>
           <div className="heather__search">
             <input

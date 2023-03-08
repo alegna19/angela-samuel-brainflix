@@ -19,12 +19,18 @@
 
     @include tablet {
       width: 25%;
-      margin: 0;
+      margin-top: 3rem;
       padding: 0;
     }
 
     @include desktop {
       width: 12%;
+    }
+  }
+
+  &__img {
+    @include tablet {
+      width: 14rem;
     }
   }
 
@@ -36,6 +42,11 @@
     @include tablet {
       @include flex(null, null, center);
       flex-wrap: nowrap;
+    }
+
+    @include desktop {
+      @include flex(null, null, center);
+      padding-right: 14rem;
     }
   }
 
@@ -58,14 +69,14 @@
 
     @include tablet {
       padding-left: 4rem;
-      margin-left: 10rem;
+      margin-left: 8rem;
       width: 23rem;
       margin-top: 0;
       margin-bottom: 0;
     }
 
     @include desktop {
-      margin-left: 46rem;
+      margin-left: 32rem;
       width: 26rem;
     }
   }
@@ -78,7 +89,7 @@
 
     @include tablet {
       width: 3rem;
-      left: 27rem;
+      left: 26.5rem;
     }
     @include desktop {
       left: 64rem;
@@ -94,6 +105,8 @@
     @include tablet {
       @include flex(flex-start, row, null);
       order: 2;
+      width: 4rem;
+      height: 4rem;
     }
   }
 
