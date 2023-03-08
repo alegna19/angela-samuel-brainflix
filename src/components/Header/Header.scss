@@ -98,6 +98,7 @@
   }
 
   &__btn {
+    @include flex(space-around, null, center);
     background-color: $brand-primary-blue;
     border: 0;
     width: 29rem;
