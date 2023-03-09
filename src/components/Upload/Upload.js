@@ -1,5 +1,4 @@
 import imageUpload from "../../assets/images/Upload-video-preview.jpg";
-import publishIcon from "../../assets/icons/publish.svg";
 import { useNavigate, Link } from "react-router-dom";
 import "./Upload.scss";
 
@@ -22,47 +21,44 @@ const Upload = () => {
             <img className="upload__img" src={imageUpload} alt="upload" />
           </div>
           <div>
-            <form className="form">
-              <div className="form__video">
-                <label className="form__title">TITLE YOUR VIDEO</label>
+            <form className="form-upload">
+              <div className="form-upload__video">
+                <label className="form-upload__title">TITLE YOUR VIDEO</label>
               </div>
               <input
-                className="form__input-video"
+                className="form-upload__input"
                 type="text"
                 name="title"
                 placeholder="Add a title to your video"
               />
 
-              <div className="form__description">
-                <label className="form__title" name="description">
+              <div className="form-upload__description">
+                <label className="form-upload__title" name="description">
                   ADD A VIDEO DESCRIPTION
                 </label>
                 <textarea
-                  className="form__add-description"
+                  className="form-upload__add"
                   type="text"
                   name="description"
                   placeholder="Add a description to your video"
                 ></textarea>
               </div>
 
-              <div>
-                <button
-                  id="submitBtn"
-                  className="form__btn-video"
-                  type="submit"
-                  onClick={handleClick}
-                >
-                  PUBLISH
-                  <img
-                    src={publishIcon}
-                    alt="publish icon"
-                    className="form__publish"
-                  />
-                </button>
+              <div className="form-upload__container">
+                <div>
+                  <button
+                    id="submitBtn"
+                    className="form-upload__btn form-upload__publish"
+                    type="submit"
+                    onClick={handleClick}
+                  >
+                    PUBLISH
+                  </button>
+                </div>
+                <Link>
+                  <p className="form-upload__cancel">CANCEL</p>
+                </Link>
               </div>
-              <Link>
-                <p className="form__cancel">CANCEL</p>
-              </Link>
             </form>
           </div>
         </section>

@@ -1,6 +1,5 @@
 import Comments from "../Comments/Comments";
 import formImg from "../../assets/images/Mohan-muruge.jpg";
-import addComment from "../../assets/icons/add_comment.svg";
 import "./FormComment.scss";
 
 const FormComment = ({ mainVideo }) => {
@@ -12,7 +11,7 @@ const FormComment = ({ mainVideo }) => {
         <div className="wrapper">
           <p className="form__count">{countComments} Comments</p>
           <form className="form">
-            <div className="form__info">
+            <div className="form__info ">
               <img className="form__image" src={formImg} alt="representative" />
               <div className="form__input">
                 <label className="form__label" name="comment">
@@ -26,14 +25,13 @@ const FormComment = ({ mainVideo }) => {
                 ></textarea>
               </div>
             </div>
-            <div className="form__btn">
-              <button id="submitBtn" className="form__button" type="submit">
+            <div className="form__btn ">
+              <button
+                id="submitBtn"
+                className="form__button form__add-comment"
+                type="submit"
+              >
                 COMMENT
-                <img
-                  className="form__add-comment"
-                  src={addComment}
-                  alt="add comment"
-                />
               </button>
             </div>
             <div className="comments"></div>
