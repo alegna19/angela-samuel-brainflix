@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import DescriptionVideo from "../components/DescriptionVideo/DescriptionVideo";
@@ -6,6 +7,7 @@ import FormComment from "../components/FormComment/FormComment";
 import Hero from "../components/Hero/Hero";
 import NextVideos from "../components/NextVideos/NextVideos";
 import "../styles/main.scss";
+import "../pages/Home.scss";
 
 const Home = () => {
   const apiKey = `25911480-9d159f35-9bd5-43e4-a38a-2deb25ece1c0`;
@@ -13,6 +15,7 @@ const Home = () => {
 
   const [listVideos, setListVideos] = useState(null);
   const [mainVideo, setMainVideo] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const { videoId } = useParams();
   //Get all videos from the API
@@ -42,8 +45,20 @@ const Home = () => {
     }
   }, [videoId]);
 
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  }, []);
+
   if (!mainVideo || !listVideos) {
-    return <h1>Loading ...</h1>;
+    return (
+      <div className="loading">
+        <h1>Loading ...</h1>
+        <ClipLoader color={`#0095ff`} loading={loading} size={100} />
+      </div>
+    );
   }
 
   return (
