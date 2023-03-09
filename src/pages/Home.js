@@ -48,7 +48,7 @@ const Home = () => {
 
   return (
     <div className="App">
-      <Hero hero={mainVideo} activeVideoId={mainVideo.id} />
+      <Hero mainVideo={mainVideo} activeVideoId={mainVideo.id} />
       <div className="row">
         <div>
           <DescriptionVideo
@@ -57,7 +57,7 @@ const Home = () => {
           />
           <FormComment mainVideo={mainVideo} />
         </div>
-        <NextVideos dataVideos={listVideos} activeVideoId={mainVideo.id} />
+        <NextVideos listVideos={listVideos} activeVideoId={mainVideo.id} />
       </div>
     </div>
   );

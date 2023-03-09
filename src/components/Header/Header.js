@@ -1,8 +1,6 @@
 import "./Header.scss";
 import imageLogo from "../../assets/logo/BrainFlix-logo.svg";
 import heatherImg from "../../assets/images/Mohan-muruge.jpg";
-import searchIcon from "../../assets/icons/search.svg";
-import uploadIcon from "../../assets/icons/upload.svg";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -17,22 +15,12 @@ const Header = () => {
             <input
               type="text"
               name="search"
-              className="heather__text"
+              className="heather__text heather__search-icon"
               placeholder="Search"
             />
-            <img
-              src={searchIcon}
-              alt="search icon"
-              className="heather__search-icon"
-            />
             <img src={heatherImg} alt="heather" className="heather__image" />
-            <Link to={"/../upload"} className="heather__btn">
+            <Link to={"/../upload"} className="heather__btn heather__upload">
               UPLOAD
-              <img
-                src={uploadIcon}
-                alt="upload icon"
-                className="heather__upload"
-              />
             </Link>
           </div>
         </div>

@@ -1,8 +1,17 @@
 import imageUpload from "../../assets/images/Upload-video-preview.jpg";
 import publishIcon from "../../assets/icons/publish.svg";
+import { useNavigate, Link } from "react-router-dom";
 import "./Upload.scss";
 
 const Upload = () => {
+  const navigate = useNavigate();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    alert("Video uploaded successfully");
+    navigate("/");
+  };
+
   return (
     <div className="wrapper">
       <div className="upload">
@@ -15,14 +24,12 @@ const Upload = () => {
           <div>
             <form className="form">
               <div className="form__video">
-                <label className="form__title" name="video">
-                  TITLE YOUR VIDEO
-                </label>
+                <label className="form__title">TITLE YOUR VIDEO</label>
               </div>
               <input
                 className="form__input-video"
                 type="text"
-                name="video"
+                name="title"
                 placeholder="Add a title to your video"
               />
 
@@ -38,13 +45,14 @@ const Upload = () => {
                 ></textarea>
               </div>
 
-              <div className="form__btn-upload">
+              <div>
                 <button
                   id="submitBtn"
                   className="form__btn-video"
                   type="submit"
+                  onClick={handleClick}
                 >
-                  COMMENT
+                  PUBLISH
                   <img
                     src={publishIcon}
                     alt="publish icon"
@@ -52,6 +60,9 @@ const Upload = () => {
                   />
                 </button>
               </div>
+              <Link>
+                <p className="form__cancel">CANCEL</p>
+              </Link>
             </form>
           </div>
         </section>

@@ -1,8 +1,5 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/typography";
-@use "../../styles/partials/global" as *;
-@use "../../styles/partials/resets" as *;
 
 .upload {
   border-top: 1.6px solid $bran-color-mercury;
@@ -105,5 +102,12 @@
     @include tablet {
       top: 1rem;
     }
+  }
+
+  &__cancel {
+    color: $brand-primary-blue;
+    text-align: center;
+    margin: 4rem 0;
+    font-weight: 700;
   }
 }

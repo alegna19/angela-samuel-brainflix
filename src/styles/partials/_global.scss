@@ -31,5 +31,6 @@ a {
 .row {
   @include desktop {
     display: flex;
+    //width: 100%;
   }
 }

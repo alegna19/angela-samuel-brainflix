@@ -1,11 +1,11 @@
 import "./Hero.scss";
 
-const Hero = ({ hero }) => {
+const Hero = ({ mainVideo }) => {
   return (
     <div>
       <video
         className="video"
-        poster={hero.image}
+        poster={mainVideo.image}
         controls
         width="100%"
         height="100%"
