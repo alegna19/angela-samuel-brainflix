@@ -15,7 +15,7 @@
     max-width: $wrapper-max-width;
     margin: auto;
     width: 100%;
-    padding-left: 3rem;
+    padding-left: 0;
     padding-right: 0;
   }
 
@@ -31,6 +31,6 @@ a {
 .row {
   @include desktop {
     display: flex;
-    // width: 100%;
+    width: 100%;
   }
 }

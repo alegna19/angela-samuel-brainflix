@@ -8,6 +8,17 @@
     margin-top: 3.5rem;
     font-size: 3rem;
     font-weight: 600;
+
+    @include tablet {
+      padding-bottom: 3rem;
+      border-bottom: 1.6px solid $bran-color-mercury;
+    }
+
+    @include desktop {
+      margin: 4rem 7rem;
+      margin-right: 10rem;
+      padding-bottom: 4rem;
+    }
   }
 
   &__title-video {
@@ -15,20 +26,54 @@
     font-size: 1.8rem;
     margin-bottom: 1rem;
     margin-top: 3rem;
+    padding-top: 3rem;
+
+    @include desktop {
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-top: 0;
+      font-size: 1.3rem;
+    }
   }
 
   &__img {
-    background-color: $bran-color-mercury;
     padding-top: 0;
     width: 100%;
     height: auto;
     border-radius: 4px;
     object-fit: cover;
+
+    @include tablet {
+      width: 50%;
+    }
+    @include desktop {
+      width: 100%;
+      padding-top: 0.3rem;
+    }
+  }
+
+  &__container {
+    @include desktop {
+      @include flex(flex-start, row, flex-start);
+    }
+  }
+
+  &__image {
+    @include desktop {
+      @include flex(flex-start, column, null);
+      padding-left: 7rem;
+    }
   }
 }
 
 .form-upload {
   @include flex(center, column, null);
+
+  @include desktop {
+    @include flex(flex-start, column, null);
+    padding-left: 2.5rem;
+    padding-right: 13rem;
+  }
 
   &__video {
     @include flex(null, column, flex-start);
@@ -72,7 +117,7 @@
     }
 
     @include desktop {
-      width: 47rem;
+      width: 67rem;
       height: 4rem;
     }
   }
@@ -92,6 +137,7 @@
     color: white;
     position: relative;
     font-size: 1.5rem;
+    cursor: pointer;
 
     @include tablet {
       margin: 0 2rem;
@@ -123,12 +169,16 @@
   }
 
   &__container {
-    border-top: 1px solid $bran-color-mercury;
     margin-top: 3rem;
+    border-top: 1px solid $bran-color-mercury;
 
     @include tablet {
       @include flex(flex-start, row-reverse, null);
       align-items: baseline;
+    }
+
+    @include desktop {
+      border-top: 0px;
     }
   }
 }

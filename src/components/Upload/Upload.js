@@ -14,13 +14,13 @@ const Upload = () => {
   return (
     <div className="wrapper">
       <div className="upload">
-        <h2 className="upload__title">Upload Video</h2>
         <section>
-          <div>
-            <h3 className="upload__title-video">VIDEO THUMBNAIL</h3>
-            <img className="upload__img" src={imageUpload} alt="upload" />
-          </div>
-          <div>
+          <h2 className="upload__title">Upload Video</h2>
+          <div className="upload__container">
+            <div className="upload__image">
+              <h3 className="upload__title-video">VIDEO THUMBNAIL</h3>
+              <img className="upload__img" src={imageUpload} alt="upload" />
+            </div>
             <form className="form-upload">
               <div className="form-upload__video">
                 <label className="form-upload__title">TITLE YOUR VIDEO</label>
