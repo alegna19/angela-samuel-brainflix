@@ -16,6 +16,7 @@ const Home = () => {
   const [listVideos, setListVideos] = useState(null);
   const [mainVideo, setMainVideo] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const { videoId } = useParams();
   //Get all videos from the API
@@ -40,8 +41,8 @@ const Home = () => {
   useEffect(() => {
     try {
       getVideos();
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      setError(err.message);
     }
   }, [videoId]);
 
@@ -74,6 +75,7 @@ const Home = () => {
         </div>
         <NextVideos listVideos={listVideos} activeVideoId={mainVideo.id} />
       </div>
+      {error && <p>{error}</p>}
     </div>
   );
 };
