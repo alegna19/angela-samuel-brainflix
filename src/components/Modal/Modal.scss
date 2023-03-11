@@ -1,0 +1,53 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.modal {
+  @include flex(center, null, center);
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  &__container {
+    @include flex(center, column, center);
+    width: 80%;
+    height: 16rem;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    @include tablet {
+      width: 38%;
+      height: 17rem;
+    }
+    @include desktop {
+      width: 28%;
+      height: 18rem;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0;
+
+    @include tablet {
+      font-size: 1.7rem;
+    }
+  }
+
+  &__btn {
+    @include flex(center, null, center);
+    margin-top: 1rem;
+    background-color: $brand-primary-blue;
+    border: 0;
+    width: 17rem;
+    height: 4rem;
+    border-radius: 4px;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+  }
+}
