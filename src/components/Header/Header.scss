@@ -1,7 +1,8 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.heather {
+.header {
+  border-bottom: 1.6px solid #e1e1e1;
   &__container {
     @include tablet {
       display: flex;
@@ -13,6 +14,7 @@
     margin: 0 auto;
     padding-top: 2rem;
     width: 50%;
+    text-align: center;
 
     @include tablet {
       width: 25%;

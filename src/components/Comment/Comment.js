@@ -3,7 +3,7 @@ const Comment = ({ comment }) => {
     <div className="comments__container">
       <article className="comments__info" key={comment.id}>
         <div className="comments__image"></div>
-        <div>
+        <div className="comments__body">
           <div className="comments__details">
             <p className="comments__name">{comment.name}</p>
             <p className="comments__date">

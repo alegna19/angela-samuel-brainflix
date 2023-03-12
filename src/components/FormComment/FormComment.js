@@ -53,6 +53,7 @@ const FormComment = ({ mainVideo }) => {
                 </label>
                 <textarea
                   className="form__comment"
+                  value={comment}
                   type="text"
                   name="comment"
                   placeholder="Add a new comment"
@@ -71,9 +72,7 @@ const FormComment = ({ mainVideo }) => {
         {error && <p>{error}</p>}
       </section>
       {postComment && (
-        <Comments
-          comments={mainVideo.comments.slice(0, 3).concat(postComment)}
-        />
+        <Comments comments={mainVideo.comments.concat(postComment)} />
       )}
     </>
   );

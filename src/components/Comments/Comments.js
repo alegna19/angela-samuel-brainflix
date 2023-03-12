@@ -9,7 +9,7 @@ const Comments = ({ comments }) => {
   return (
     <div className="comments">
       <div className="wrapper">
-        {sortedComments.map((comment) => {
+        {sortedComments.slice(0, 3).map((comment) => {
           return <Comment key={comment.id} comment={comment} />;
         })}
       </div>

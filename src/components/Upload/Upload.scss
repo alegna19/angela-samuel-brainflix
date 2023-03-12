@@ -2,8 +2,6 @@
 @use "../../styles/partials/mixins" as *;
 
 .upload {
-  border-top: 1.6px solid $bran-color-mercury;
-
   &__title {
     margin-top: 3.5rem;
     font-size: 3rem;
