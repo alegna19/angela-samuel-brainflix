@@ -1,8 +1,5 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/typography";
-@use "../../styles/partials/global" as *;
-@use "../../styles/partials/resets" as *;
 
 .form {
   @include flex(center, column, null);
@@ -134,8 +131,9 @@
   }
 
   &__add-comment {
-    position: absolute;
-    width: 2rem;
-    left: 1rem;
+    background-image: url(../../assets/icons/add_comment.svg);
+    background-repeat: no-repeat;
+    background-position: 1rem 1rem;
+    background-size: 2rem;
   }
 }

@@ -1,10 +1,8 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/typography";
-@use "../../styles/partials/global" as *;
-@use "../../styles/partials/resets" as *;
 
-.heather {
+.header {
+  border-bottom: 1.6px solid #e1e1e1;
   &__container {
     @include tablet {
       display: flex;
@@ -16,15 +14,22 @@
     margin: 0 auto;
     padding-top: 2rem;
     width: 50%;
+    text-align: center;
 
     @include tablet {
       width: 25%;
-      margin: 0;
+      margin-top: 3rem;
       padding: 0;
     }
 
     @include desktop {
       width: 12%;
+    }
+  }
+
+  &__img {
+    @include tablet {
+      width: 14rem;
     }
   }
 
@@ -36,6 +41,11 @@
     @include tablet {
       @include flex(null, null, center);
       flex-wrap: nowrap;
+    }
+
+    @include desktop {
+      @include flex(null, null, center);
+      padding-right: 14rem;
     }
   }
 
@@ -58,31 +68,23 @@
 
     @include tablet {
       padding-left: 4rem;
-      margin-left: 10rem;
+      margin-left: 8rem;
       width: 23rem;
       margin-top: 0;
       margin-bottom: 0;
     }
 
     @include desktop {
-      margin-left: 46rem;
+      margin-left: 32rem;
       width: 26rem;
     }
   }
 
   &__search-icon {
-    position: absolute;
-    width: 3rem;
-    height: 6rem;
-    padding-left: 1rem;
-
-    @include tablet {
-      width: 3rem;
-      left: 27rem;
-    }
-    @include desktop {
-      left: 64rem;
-    }
+    padding-left: 3.5rem;
+    background-image: url(../../assets/icons/search.svg);
+    background-repeat: no-repeat;
+    background-position: 1rem 1rem;
   }
 
   &__image {
@@ -94,10 +96,13 @@
     @include tablet {
       @include flex(flex-start, row, null);
       order: 2;
+      width: 4rem;
+      height: 4rem;
     }
   }
 
   &__btn {
+    @include flex(center, null, center);
     background-color: $brand-primary-blue;
     border: 0;
     width: 29rem;
@@ -106,6 +111,7 @@
     color: white;
     position: relative;
     font-size: 1.5rem;
+    text-align: center;
 
     @include tablet {
       margin: 0 2rem;
@@ -115,13 +121,9 @@
   }
 
   &__upload {
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    left: 1rem;
-
-    @include tablet {
-      top: 1rem;
-    }
+    background-image: url(../../assets/icons/upload.svg);
+    background-repeat: no-repeat;
+    background-position: 1rem 1rem;
+    background-size: 2rem;
   }
 }

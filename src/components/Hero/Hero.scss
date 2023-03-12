@@ -1,12 +1,10 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/typography";
-@use "../../styles/partials/global" as *;
-@use "../../styles/partials/resets" as *;
 
 .video {
   width: 100%;
   height: auto;
+  aspect-ratio: 16 / 9;
 
   @include tablet {
     @include flex(null, row, nul);
@@ -16,5 +14,6 @@
 
   @include desktop {
     height: 90vh;
+    padding: 0 6rem;
   }
 }

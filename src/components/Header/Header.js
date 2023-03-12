@@ -1,36 +1,27 @@
 import "./Header.scss";
 import imageLogo from "../../assets/logo/BrainFlix-logo.svg";
-import heatherImg from "../../assets/images/Mohan-muruge.jpg";
-import searchIcon from "../../assets/icons/search.svg";
-import uploadIcon from "../../assets/icons/upload.svg";
+import headerImg from "../../assets/images/Mohan-muruge.jpg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="heather">
+    <div className="header">
       <div className="wrapper">
-        <div className="heather__container">
-          <img src={imageLogo} alt="logo" className="heather__logo" />
-          <div className="heather__search">
+        <div className="header__container">
+          <Link to={"/"} className="header__logo">
+            <img className="header__img" src={imageLogo} alt="logo" />
+          </Link>
+          <div className="header__search">
             <input
               type="text"
               name="search"
-              className="heather__text"
+              className="header__text header__search-icon"
               placeholder="Search"
             />
-            <img
-              src={searchIcon}
-              alt="search icon"
-              className="heather__search-icon"
-            />
-            <img src={heatherImg} alt="heather" className="heather__image" />
-            <button className="heather__btn">
+            <img src={headerImg} alt="header" className="header__image" />
+            <Link to={"/../upload"} className="header__btn header__upload">
               UPLOAD
-              <img
-                src={uploadIcon}
-                alt="upload icon"
-                className="heather__upload"
-              />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

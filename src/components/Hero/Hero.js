@@ -1,12 +1,11 @@
 import "./Hero.scss";
 
-const Hero = ({ hero, activeVideoId }) => {
-  const activeVideo = hero.find((video) => video.id === activeVideoId);
+const Hero = ({ mainVideo }) => {
   return (
     <div>
       <video
         className="video"
-        poster={activeVideo.image}
+        poster={mainVideo.image}
         controls
         width="100%"
         height="100%"

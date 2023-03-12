@@ -1,13 +1,11 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/typography";
-@use "../../styles/partials/global" as *;
-@use "../../styles/partials/resets" as *;
 
 .next-videos {
   @include desktop {
     border-left: 1px solid $bran-color-mercury;
     padding-right: 12rem;
+    padding-left: 2.5rem;
   }
 
   &__title {

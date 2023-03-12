@@ -1,43 +1,22 @@
-import { useState } from "react";
-import DescriptionVideo from "./components/DescriptionVideo/DescriptionVideo";
-import FormComment from "./components/FormComment/FormComment";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
-import Hero from "./components/Hero/Hero";
-import NextVideos from "./components/NextVideos/NextVideos";
-import videoDataDetails from "./data/video-details.json";
+import Upload from "./components/Upload/Upload";
+import Home from "./pages/Home";
+
 import "./styles/main.scss";
 
 const App = () => {
-  const [dataDetails, setDataDetails] = useState(videoDataDetails);
-  const [activeVideoId, setActiveVideoId] = useState(videoDataDetails[0].id);
-
-  /**
-   * Validate active video through id.
-   * @param {Object} id
-   */
-  const handleClick = (id) => {
-    setActiveVideoId(id);
-  };
-
   return (
-    <div className="App">
-      <Header />
-      <Hero hero={dataDetails} activeVideoId={activeVideoId} />
-      <div className="row">
-        <div>
-          <DescriptionVideo
-            videos={dataDetails}
-            activeVideoId={activeVideoId}
-          />
-          <FormComment formData={dataDetails} activeVideoId={activeVideoId} />
-        </div>
-        <NextVideos
-          dataVideos={dataDetails}
-          handleClick={handleClick}
-          activeVideoId={activeVideoId}
-        />
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/upload" element={<Upload />} />
+          <Route path="/videos/:videoId" element={<Home />} />
+        </Routes>
       </div>
-    </div>
+    </BrowserRouter>
   );
 };
 
