@@ -1,18 +1,11 @@
 import imageUpload from "../../assets/images/Upload-video-preview.jpg";
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Upload.scss";
 import Modal from "../Modal/Modal";
 
 const Upload = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const navigate = useNavigate();
-
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  //   alert("Video uploaded successfully");
-  //   navigate("/");
-  // };
 
   return (
     <div className="wrapper">
