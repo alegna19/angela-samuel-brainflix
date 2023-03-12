@@ -43,7 +43,6 @@ const Upload = () => {
               <div className="form-upload__container">
                 <div>
                   <button
-                    id="submitBtn"
                     className="form-upload__btn form-upload__publish"
                     type="button"
                     onClick={() => {
