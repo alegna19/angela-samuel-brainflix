@@ -10,9 +10,6 @@ import "../styles/main.scss";
 import "../pages/Home.scss";
 
 const Home = () => {
-  const apiKey = `25911480-9d159f35-9bd5-43e4-a38a-2deb25ece1c0`;
-  const apiUrl = `https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`;
-
   const [listVideos, setListVideos] = useState(null);
   const [mainVideo, setMainVideo] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -21,7 +18,9 @@ const Home = () => {
   const { videoId } = useParams();
   //Get all videos from the API
   const getVideos = async () => {
-    const { data } = await axios.get(apiUrl);
+    const { data } = await axios.get(
+      `${process.env.REACT_APP_BACKEND_URL}/videos`
+    );
     setListVideos(data);
 
     const validateData = () => {
@@ -33,7 +32,9 @@ const Home = () => {
     };
 
     //Get videos by ID
-    const apiById = `https://project-2-api.herokuapp.com/videos/${validateData()}?api_key=${apiKey}`;
+    const apiById = `${
+      process.env.REACT_APP_BACKEND_URL
+    }/videos/${validateData()}`;
     const { data: singleVideo } = await axios.get(apiById);
     setMainVideo(singleVideo);
   };
