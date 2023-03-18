@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Upload.scss";
-import Modal from "../Modal/Modal";
+import Modal from "../../components/Modal/Modal";
 import axios from "axios";
 
 const Upload = () => {
