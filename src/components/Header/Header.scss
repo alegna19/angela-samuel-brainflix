@@ -28,9 +28,7 @@
   }
 
   &__img {
-    @include tablet {
-      width: 14rem;
-    }
+    width: 14rem;
   }
 
   &__search {

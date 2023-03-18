@@ -1,11 +1,30 @@
 import imageUpload from "../../assets/images/Upload-video-preview.jpg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Upload.scss";
-import Modal from "../Modal/Modal";
+import Modal from "../../components/Modal/Modal";
+import axios from "axios";
 
 const Upload = () => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const navigate = useNavigate();
+
+  const formSubmitHandler = async (e) => {
+    e.preventDefault();
+    await axios.post(`${process.env.REACT_APP_BACKEND_URL}/videos`, {
+      title: title,
+      description: description,
+    });
+    setModalOpen(true);
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    navigate("/");
+  };
 
   return (
     <div className="wrapper">
@@ -17,15 +36,17 @@ const Upload = () => {
               <h3 className="upload__title-video">VIDEO THUMBNAIL</h3>
               <img className="upload__img" src={imageUpload} alt="upload" />
             </div>
-            <form className="form-upload">
+            <form className="form-upload" onSubmit={formSubmitHandler}>
               <div className="form-upload__video">
                 <label className="form-upload__title">TITLE YOUR VIDEO</label>
               </div>
               <input
                 className="form-upload__input"
                 type="text"
+                id="title"
                 name="title"
                 placeholder="Add a title to your video"
+                onChange={(e) => setTitle(e.target.value)}
               />
 
               <div className="form-upload__description">
@@ -36,7 +57,9 @@ const Upload = () => {
                   className="form-upload__add"
                   type="text"
                   name="description"
+                  id="description"
                   placeholder="Add a description to your video"
+                  onChange={(e) => setDescription(e.target.value)}
                 ></textarea>
               </div>
 
@@ -44,17 +67,16 @@ const Upload = () => {
                 <div>
                   <button
                     className="form-upload__btn form-upload__publish"
-                    type="button"
-                    onClick={() => {
-                      setModalOpen(true);
-                    }}
+                    type="submit"
                   >
                     PUBLISH
                   </button>
                   {modalOpen && <Modal setModalOpen={setModalOpen} />}
                 </div>
                 <Link>
-                  <p className="form-upload__cancel">CANCEL</p>
+                  <p className="form-upload__cancel" onClick={handleClick}>
+                    CANCEL
+                  </p>
                 </Link>
               </div>
             </form>

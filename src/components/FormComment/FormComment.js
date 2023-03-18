@@ -15,8 +15,7 @@ const FormComment = ({ mainVideo }) => {
     setPostComment([]);
   }, [mainVideo]);
 
-  const apiKey = `25911480-9d159f35-9bd5-43e4-a38a-2deb25ece1c0`;
-  const apiUrl = `https://project-2-api.herokuapp.com/videos/${mainVideo.id}/comments?api_key=${apiKey}`;
+  const apiUrl = `${process.env.REACT_APP_BACKEND_URL}/videos/${mainVideo.id}/comments`;
 
   const submitComment = async () => {
     try {
