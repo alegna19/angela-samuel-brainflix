@@ -37,6 +37,7 @@
     margin-bottom: 1.7rem;
     font-size: 1.3rem;
     font-weight: 700;
+    color: $brand-secondary-dark-black;
 
     @include desktop {
       font-size: 1.4rem;
@@ -46,6 +47,7 @@
   &__subTitle {
     margin-top: 0;
     font-size: 1.3rem;
+    color: $brand-secondary-dark-black;
 
     @include desktop {
       font-size: 1.4rem;

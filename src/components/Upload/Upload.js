@@ -1,5 +1,6 @@
 import imageUpload from "../../assets/images/Upload-video-preview.jpg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Upload.scss";
 import Modal from "../Modal/Modal";
@@ -9,15 +10,20 @@ const Upload = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const navigate = useNavigate();
 
   const formSubmitHandler = async (e) => {
     e.preventDefault();
-    console.log(formSubmitHandler);
     await axios.post(`${process.env.REACT_APP_BACKEND_URL}/videos`, {
       title: title,
       description: description,
     });
     setModalOpen(true);
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    navigate("/");
   };
 
   return (
@@ -68,7 +74,9 @@ const Upload = () => {
                   {modalOpen && <Modal setModalOpen={setModalOpen} />}
                 </div>
                 <Link>
-                  <p className="form-upload__cancel">CANCEL</p>
+                  <p className="form-upload__cancel" onClick={handleClick}>
+                    CANCEL
+                  </p>
                 </Link>
               </div>
             </form>
